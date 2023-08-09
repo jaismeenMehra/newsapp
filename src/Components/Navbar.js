@@ -4,10 +4,10 @@ export default class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-          <div className="container-fluid">
+        <nav className="navbar navbar-expand-lg" style={{backgroundColor: "#3A833A "}}>
+          <div className="container-fluid" >
           <a class="navbar-brand" href="/">
-      <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwvkQOk3wPF8748LX725ecvC3jiJ2f1lUEA&usqp=CAU" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"  style={{marginRight : "5px"}} />
       NewsMonkey
     </a>
             <button
@@ -29,7 +29,7 @@ export default class Navbar extends Component {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
+                  <a className="nav-link active" href="/">
                     Features
                   </a>
                 </li>
