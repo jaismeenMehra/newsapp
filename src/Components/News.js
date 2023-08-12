@@ -12,7 +12,7 @@ export default class News extends Component {
 
   async componentDidMount() {
     let url =
-      "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b8539e5ef0564e018412bb0393bc46cb&page=1&pagesize=12";
+      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b8539e5ef0564e018412bb0393bc46cb&page=1&pagesize=12";
     let data = await fetch(url);
     let parsedData = await data.json();
     // console.log(parsedData);
@@ -23,7 +23,7 @@ export default class News extends Component {
   }
 
   handlePrevClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b8539e5ef0564e018412bb0393bc46cb
+    let url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b8539e5ef0564e018412bb0393bc46cb
     &page=${
       this.state.page - 1
     }&pagesize=12`;
@@ -39,7 +39,7 @@ export default class News extends Component {
     if (this.state.page + 1 > Math.ceil(this.state.totalResults / 9)) {
     }
      else {
-      let url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b8539e5ef0564e018412bb0393bc46cb
+      let url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b8539e5ef0564e018412bb0393bc46cb
       &page=${
         this.state.page + 1
       }&pagesize=12`;
