@@ -6,7 +6,7 @@ export default class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg" style={{backgroundColor: "#3A833A "}}>
           <div className="container-fluid" >
-          <a class="navbar-brand" href="/">
+          <a className="navbar-brand" href="/">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwvkQOk3wPF8748LX725ecvC3jiJ2f1lUEA&usqp=CAU" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"  style={{marginRight : "5px"}} />
       NewsMonkey
     </a>
@@ -30,7 +30,7 @@ export default class Navbar extends Component {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link active" href="/">
-                    Features
+                    About Us
                   </a>
                 </li>
               </ul>
