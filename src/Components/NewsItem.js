@@ -10,13 +10,12 @@ export default class NewsItem extends Component {
       const d1 =new Date(date);
       const cd = new Date();
       const timeDifferenceMillis = cd - d1;
-      const hoursDifference = timeDifferenceMillis / (1000 * 60 * 60);
-
-
+      const hoursDifference = Math.floor(timeDifferenceMillis / (1000 * 60 * 60));
+      
     return (
       <div>
          <div className="card" style={{ width: "18rem" }}>
-         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
     {source}
     
   </span>
@@ -25,7 +24,7 @@ export default class NewsItem extends Component {
     
       <h5 className="card-title">{title}...</h5>
       
-      {hoursDifference <= 2 && <span className="badge bg-danger">New</span>}
+      {hoursDifference <= 24 && <span className="badge bg-danger">New</span>}
       <p className="card-text">
         {description}...
       </p>
