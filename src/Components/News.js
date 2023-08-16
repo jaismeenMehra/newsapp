@@ -1,10 +1,26 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
+import PropTypes from 'prop-types';
+
 
 
 
 export default class News extends Component {
+  static defaultProps={
+    pageSize : 9,
+    country: 'in',
+    category: "general",  
+
+  }
+
+  static propTypes ={
+    pageSize: PropTypes.number,
+    country: PropTypes.string,
+    category: PropTypes.string,
+
+  }
+
   constructor() {
     super();
     this.state = {
@@ -16,20 +32,20 @@ export default class News extends Component {
 
   async componentDidMount() {
     let url =
-      `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b8539e5ef0564e018412bb0393bc46cb&page=1&pagesize=${this.props.pageSize}`;
+      `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=b8539e5ef0564e018412bb0393bc46cb&page=1&pagesize=${this.props.pageSize}`;
     this.setState({loading:true});
     let data = await fetch(url);
     let parsedData = await data.json();
     // console.log(parsedData);
     this.setState({
       articles: parsedData.articles,
-      totalArticles: parsedData.totalResults,
+      totalResults: parsedData.totalResults,
       loading: false,
     });
   }
 
   handlePrevClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b8539e5ef0564e018412bb0393bc46cb
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=b8539e5ef0564e018412bb0393bc46cb
     &page=${
       this.state.page - 1
     }&pagesize=${this.props.pageSize}`;
@@ -47,7 +63,7 @@ export default class News extends Component {
 
   handleNextClick = async () => {
     
-      let url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b8539e5ef0564e018412bb0393bc46cb
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=b8539e5ef0564e018412bb0393bc46cb
       &page=${
         this.state.page + 1
       }&pagesize=${this.props.pageSize}`;
@@ -71,7 +87,7 @@ export default class News extends Component {
 
 
         <div className="row">
-          {this.state.articles &&
+          { !this.state.loading &&
             this.state.articles.map((element) => {
               return (
                 <div
@@ -87,6 +103,9 @@ export default class News extends Component {
                     }
                     imageUrl={element.urlToImage}
                     newsUrl={element.url}
+                    author ={ element.author}
+                    date = {element.publishedAt}
+                    source = {element.source.name}
                   />
                 </div>
               );

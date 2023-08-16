@@ -9,7 +9,7 @@ export default class Spinner extends Component {
           style={{ width: "3rem", height: "3rem" }}
           role="status"
         >
-          <span className="sr-only"></span>
+          <span className="sr-only">Loading...</span>
         </div>
       </div>
     )

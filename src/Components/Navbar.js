@@ -1,15 +1,40 @@
 import React, { Component } from "react";
+import {
+ 
+  Link
+} from "react-router-dom";
+
 
 export default class Navbar extends Component {
   render() {
     return (
+      
       <div>
-        <nav className="navbar navbar-expand-lg" style={{backgroundColor: "#3A833A "}}>
-          <div className="container-fluid" >
-          <a className="navbar-brand" href="/">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwvkQOk3wPF8748LX725ecvC3jiJ2f1lUEA&usqp=CAU" alt="Logo" width="30" height="24" className="d-inline-block align-text-top"  style={{marginRight : "5px"}} />
-      NewsMonkey
-    </a>
+        
+
+        
+        <nav
+          className="navbar navbar-expand-lg"
+          style={{ backgroundColor: "#3A833A " }}
+        >
+          <div className="container-fluid">
+            <div>
+              <Link className="navbar-brand" to="/">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwvkQOk3wPF8748LX725ecvC3jiJ2f1lUEA&usqp=CAU"
+                  alt="Logo"
+                  width="30"
+                  height="24"
+                  className="d-inline-block align-text-top"
+                  style={{ marginRight: "5px" }}
+                />
+                NewsMonkey
+              </Link>
+            </div>
+
+
+            <div>
+
             <button
               className="navbar-toggler"
               type="button"
@@ -24,20 +49,63 @@ export default class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/">
+                  <Link className="nav-link active" aria-current="page" to="/">
                     Home
-                  </a>
+                  </Link>
+                </li>
+
+
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/business">
+                    Business
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link active" href="/">
+                  <Link className="nav-link active" to="/entertainment">
+                    Entertainment
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/general">
+                    General
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/health">
+                    Health
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/science">
+                    Science
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/sports">
+                    Sports
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/technology">
+                    Technology
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link active" to="/about">
                     About Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
+
+            </div>
+
+            
           </div>
         </nav>
+        
       </div>
+
     );
   }
 }
