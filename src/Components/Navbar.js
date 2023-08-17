@@ -18,7 +18,7 @@ export default class Navbar extends Component {
           style={{ backgroundColor: "#3A833A " }}
         >
           <div className="container-fluid">
-            <div>
+            <div > 
               <Link className="navbar-brand" to="/">
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwvkQOk3wPF8748LX725ecvC3jiJ2f1lUEA&usqp=CAU"
