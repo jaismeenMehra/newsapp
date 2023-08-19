@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
+// class based component react app
 
 export default class App extends Component {
   pageSize = 9;
