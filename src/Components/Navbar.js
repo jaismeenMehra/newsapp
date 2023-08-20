@@ -1,40 +1,29 @@
-import React, { Component } from "react";
-import {
- 
-  Link
-} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
+const Navbar = () => {
+  return (
+    <div>
+      <nav
+        className="navbar fixed-top navbar-expand-lg"
+        style={{ backgroundColor: "#3A833A " }}
+      >
+        <div className="container-fluid">
+          <div>
+            <Link className="navbar-brand" to="/">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwvkQOk3wPF8748LX725ecvC3jiJ2f1lUEA&usqp=CAU"
+                alt="Logo"
+                width="30"
+                height="24"
+                className="d-inline-block align-text-top"
+                style={{ marginRight: "5px" }}
+              />
+              NewsMonkey
+            </Link>
+          </div>
 
-export default class Navbar extends Component {
-  render() {
-    return (
-      
-      <div>
-        
-
-        
-        <nav
-          className="navbar navbar-expand-lg"
-          style={{ backgroundColor: "#3A833A " }}
-        >
-          <div className="container-fluid">
-            <div > 
-              <Link className="navbar-brand" to="/">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwvkQOk3wPF8748LX725ecvC3jiJ2f1lUEA&usqp=CAU"
-                  alt="Logo"
-                  width="30"
-                  height="24"
-                  className="d-inline-block align-text-top"
-                  style={{ marginRight: "5px" }}
-                />
-                NewsMonkey
-              </Link>
-            </div>
-
-
-            <div>
-
+          <div>
             <button
               className="navbar-toggler"
               type="button"
@@ -53,7 +42,6 @@ export default class Navbar extends Component {
                     Home
                   </Link>
                 </li>
-
 
                 <li className="nav-item">
                   <Link className="nav-link active" to="/business">
@@ -97,15 +85,11 @@ export default class Navbar extends Component {
                 </li>
               </ul>
             </div>
-
-            </div>
-
-            
           </div>
-        </nav>
-        
-      </div>
+        </div>
+      </nav>
+    </div>
+  );
+};
 
-    );
-  }
-}
+export default Navbar;

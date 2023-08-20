@@ -1,13 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class NewsItem extends Component {
-  // constructor(){
-  //   super();
-  //   console.log("hello I am a constructor");
-  // }
-  render() {
-    let { title, description, imageUrl, newsUrl, author, date, source } =
-      this.props;
+const NewsItem= (props) => {
+  
+ 
+    let { title, description, imageUrl, newsUrl, author, date, source } = props;
     const d1 = new Date(date);
     const cd = new Date();
     const timeDifferenceMillis = cd - d1;
@@ -26,7 +22,7 @@ export default class NewsItem extends Component {
                 ? imageUrl
                 : "https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_640.jpg"
             }
-            className="card-img-top card-img-size"
+            className="card-img-top ="
             alt="newsImg"
           />
           <div className="card-body">
@@ -53,5 +49,7 @@ export default class NewsItem extends Component {
         </div>
       </div>
     );
-  }
+  
 }
+
+export default NewsItem;
